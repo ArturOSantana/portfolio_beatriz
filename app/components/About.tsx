@@ -4,7 +4,11 @@ import { urlFor } from '@/lib/sanity'
 interface AboutProps {
   title: string
   text: string
-  image: any
+  image?: {
+    asset: {
+      _ref: string
+    }
+  }
 }
 
 export default function About({ title, text, image }: AboutProps) {

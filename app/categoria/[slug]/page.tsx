@@ -25,15 +25,20 @@ async function getPortfolioByCategory(category: string) {
     }`
     
     return await client.fetch(query, { category })
-  } catch (error) {
+  } catch {
     console.log('Sanity não configurado ainda')
     return []
   }
 }
 
-export default async function CategoryPage({ params }: { params: { slug: string } }) {
-  const portfolios = await getPortfolioByCategory(params.slug)
-  const categoryName = categoryNames[params.slug] || params.slug
+export default async function CategoryPage({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const portfolios = await getPortfolioByCategory(slug)
+  const categoryName = categoryNames[slug] || slug
 
   return (
     <>
@@ -53,7 +58,18 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 
           {portfolios.length > 0 ? (
             <div className="grid">
-              {portfolios.map((item: any) => (
+              {portfolios.map((item: {
+                _id: string
+                title: string
+                slug: { current: string }
+                excerpt: string
+                mainImage?: {
+                  asset: {
+                    _ref: string
+                  }
+                }
+                linkMateria?: string
+              }) => (
                 <div key={item._id} className="card">
                   {item.mainImage && (
                     <div className="card-image">

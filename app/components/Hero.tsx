@@ -7,7 +7,11 @@ interface HeroProps {
   title: string
   subtitle: string
   buttonText?: string
-  image: any
+  image?: {
+    asset: {
+      _ref: string
+    }
+  }
 }
 
 export default function Hero({ title, subtitle, buttonText = 'Ver portfólio', image }: HeroProps) {

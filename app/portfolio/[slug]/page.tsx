@@ -19,14 +19,19 @@ async function getPortfolio(slug: string) {
     }`
     
     return await client.fetch(query, { slug })
-  } catch (error) {
+  } catch {
     console.log('Sanity não configurado ainda')
     return null
   }
 }
 
-export default async function PortfolioPage({ params }: { params: { slug: string } }) {
-  const portfolio = await getPortfolio(params.slug)
+export default async function PortfolioPage({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const portfolio = await getPortfolio(slug)
 
   if (!portfolio) {
     return (
