@@ -616,3 +616,315 @@ footer {
 /* Made with Bob - Design Profissional e Sofisticado */
 
 /* Made with Bob */
+
+/* ===== CORES ESPECÍFICAS DAS REDES SOCIAIS ===== */
+.contact .btn[href*="linkedin"] {
+  background: #0077B5 !important; /* Azul oficial do LinkedIn */
+  color: white !important;
+  border-color: #0077B5 !important;
+}
+
+.contact .btn[href*="linkedin"]:hover {
+  background: #005885 !important;
+  border-color: #005885 !important;
+  color: white !important;
+}
+
+.contact .btn[href*="instagram"] {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.contact .btn[href*="instagram"]:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.contact .btn[href*="twitter"] {
+  background: #1DA1F2 !important;
+  color: white !important;
+  border-color: #1DA1F2 !important;
+}
+
+.contact .btn[href*="twitter"]:hover {
+  background: #0d8bd9 !important;
+  border-color: #0d8bd9 !important;
+}
+
+.contact .btn[href*="facebook"] {
+  background: #1877F2 !important;
+  color: white !important;
+  border-color: #1877F2 !important;
+}
+
+.contact .btn[href*="facebook"]:hover {
+  background: #0d65d9 !important;
+  border-color: #0d65d9 !important;
+}
+
+.contact .btn[href*="youtube"] {
+  background: #FF0000 !important;
+  color: white !important;
+  border-color: #FF0000 !important;
+}
+
+.contact .btn[href*="youtube"]:hover {
+  background: #cc0000 !important;
+  border-color: #cc0000 !important;
+}
+
+.contact .btn[href*="wa.me"],
+.contact .btn[href*="whatsapp"] {
+  background: #25D366 !important;
+  color: white !important;
+  border-color: #25D366 !important;
+}
+
+.contact .btn[href*="wa.me"]:hover,
+.contact .btn[href*="whatsapp"]:hover {
+  background: #1da851 !important;
+  border-color: #1da851 !important;
+}
+
+.contact .btn[href*="mailto"] {
+  background: #EA4335 !important;
+  color: white !important;
+  border-color: #EA4335 !important;
+}
+
+.contact .btn[href*="mailto"]:hover {
+  background: #d33426 !important;
+  border-color: #d33426 !important;
+}
+
+.contact .btn[href*="tel"] {
+  background: #34A853 !important;
+  color: white !important;
+  border-color: #34A853 !important;
+}
+
+.contact .btn[href*="tel"]:hover {
+  background: #2d8f47 !important;
+  border-color: #2d8f47 !important;
+}
+
+/* ===== RESPONSIVIDADE MOBILE ===== */
+
+/* Tablets e telas médias (até 768px) */
+@media (max-width: 768px) {
+  /* Container */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Header */
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .xhero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .hero-photo {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* About */
+  .about h3 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  /* Portfolio */
+  .titulo-secao {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Contact */
+  .contact h3 {
+    font-size: 2rem;
+  }
+
+  .contact p {
+    font-size: 1rem;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+}
+
+/* Celulares (até 480px) */
+@media (max-width: 480px) {
+  /* Header mobile */
+  .header-inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  /* Hero mobile */
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* About mobile */
+  .about h3 {
+    font-size: 1.75rem;
+  }
+
+  .about p {
+    font-size: 0.95rem;
+  }
+
+  .about-photo-img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* Portfolio mobile */
+  .titulo-secao {
+    font-size: 1.75rem;
+  }
+
+  .portfolio-categorias .card {
+    padding: 1.5rem;
+  }
+
+  .portfolio-categorias .card h4 {
+    font-size: 1.25rem;
+  }
+
+  /* Contact mobile */
+  .contact {
+    padding: 3rem 0;
+  }
+
+  .contact h3 {
+    font-size: 1.75rem;
+  }
+
+  .contact .btn {
+    font-size: 0.9rem;
+    padding: 0.875rem 1rem;
+  }
+
+  /* Cards mobile */
+  .card h4 {
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  /* Brands carousel mobile */
+  .brands-carousel {
+    padding: 2rem 0;
+  }
+
+  .brands-carousel h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Celulares muito pequenos (até 360px) */
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .titulo-secao {
+    font-size: 1.5rem;
+  }
+
+  .contact h3 {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    font-size: 0.8rem;
+  }
+}
