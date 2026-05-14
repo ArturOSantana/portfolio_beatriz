@@ -1,0 +1,538 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Título"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug",
+        "title": "Slug (URL)"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Redação Jornalística",
+              "value": "redacao-jornalistica"
+            },
+            {
+              "title": "Assessoria de Imprensa",
+              "value": "assessoria-de-imprensa"
+            },
+            {
+              "title": "Ghostwriting",
+              "value": "ghostwriting"
+            },
+            {
+              "title": "Blog Post",
+              "value": "blog-post"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "redacao-jornalistica",
+                  "assessoria-de-imprensa",
+                  "ghostwriting",
+                  "blog-post"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "category",
+        "type": "string",
+        "title": "Categoria"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 200
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "excerpt",
+        "type": "text",
+        "title": "Resumo"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "mainImage",
+        "type": "image",
+        "title": "Imagem Principal"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Link para o artigo publicado no site original",
+        "name": "linkMateria",
+        "type": "url",
+        "title": "Link da Matéria Original"
+      },
+      {
+        "name": "publishedAt",
+        "type": "datetime",
+        "title": "Data de Publicação"
+      }
+    ],
+    "name": "portfolio",
+    "type": "document",
+    "title": "Trabalhos do Portfólio"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Seu nome e profissão (ex: \"Beatriz - Jornalista Profissional\")",
+        "name": "heroTitle",
+        "type": "string",
+        "title": "Título Principal"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 300
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Breve descrição do que você faz",
+        "name": "heroSubtitle",
+        "type": "text",
+        "title": "Subtítulo / Descrição"
+      },
+      {
+        "initialValue": "Ver portfólio",
+        "description": "Texto do botão principal (ex: \"Ver portfólio\")",
+        "name": "heroButtonText",
+        "type": "string",
+        "title": "Texto do Botão"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "description": "Foto que aparece na seção principal (recomendado: 600x800px)",
+        "name": "heroImage",
+        "type": "image",
+        "title": "Sua Foto Principal"
+      },
+      {
+        "initialValue": "Sobre Mim",
+        "description": "Título da seção \"Sobre Mim\"",
+        "name": "aboutTitle",
+        "type": "string",
+        "title": "Título da Seção"
+      },
+      {
+        "rows": 8,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 1000
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Conte sua história profissional, experiência e diferenciais",
+        "name": "aboutText",
+        "type": "text",
+        "title": "Sua Biografia"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "description": "Foto circular que aparece na seção sobre (recomendado: 500x500px)",
+        "name": "aboutImage",
+        "type": "image",
+        "title": "Foto da Seção Sobre"
+      },
+      {
+        "description": "Seu e-mail profissional",
+        "name": "email",
+        "type": "string",
+        "title": "E-mail de Contato"
+      },
+      {
+        "description": "Telefone com DDD (ex: (11) 99999-9999)",
+        "name": "phone",
+        "type": "string",
+        "title": "Telefone"
+      },
+      {
+        "placeholder": "5511999999999",
+        "description": "Número com código do país (ex: 5511999999999)",
+        "name": "whatsappNumber",
+        "type": "string",
+        "title": "Número do WhatsApp"
+      },
+      {
+        "initialValue": "Olá! Gostaria de saber mais sobre seus serviços.",
+        "description": "Mensagem que aparece ao abrir o WhatsApp",
+        "name": "whatsappMessage",
+        "type": "string",
+        "title": "Mensagem Padrão do WhatsApp"
+      },
+      {
+        "placeholder": "https://linkedin.com/in/seu-perfil",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Link completo do seu perfil no LinkedIn",
+        "name": "linkedinUrl",
+        "type": "url",
+        "title": "LinkedIn"
+      },
+      {
+        "placeholder": "https://instagram.com/seu-perfil",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Link do seu perfil no Instagram",
+        "name": "instagramUrl",
+        "type": "url",
+        "title": "Instagram"
+      },
+      {
+        "placeholder": "https://twitter.com/seu-perfil",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Link do seu perfil no Twitter/X",
+        "name": "twitterUrl",
+        "type": "url",
+        "title": "Twitter / X"
+      },
+      {
+        "placeholder": "https://facebook.com/seu-perfil",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Link do seu perfil no Facebook",
+        "name": "facebookUrl",
+        "type": "url",
+        "title": "Facebook"
+      },
+      {
+        "placeholder": "https://youtube.com/@seu-canal",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Link do seu canal no YouTube",
+        "name": "youtubeUrl",
+        "type": "url",
+        "title": "YouTube"
+      },
+      {
+        "placeholder": "#d4af37",
+        "initialValue": "#d4af37",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "regex",
+                "constraint": {
+                  "pattern": "/^#[0-9A-Fa-f]{6}$/",
+                  "name": "hex",
+                  "invert": false
+                }
+              }
+            ],
+            "level": "error",
+            "message": "Use formato hexadecimal: #000000"
+          }
+        ],
+        "description": "Cor principal do site - formato: #d4af37 (botões, destaques)",
+        "name": "primaryColor",
+        "type": "string",
+        "title": "Cor Principal (Hexadecimal)"
+      },
+      {
+        "placeholder": "#f59e0b",
+        "initialValue": "#f59e0b",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "regex",
+                "constraint": {
+                  "pattern": "/^#[0-9A-Fa-f]{6}$/",
+                  "name": "hex",
+                  "invert": false
+                }
+              }
+            ],
+            "level": "error",
+            "message": "Use formato hexadecimal: #000000"
+          }
+        ],
+        "description": "Cor secundária - formato: #f59e0b (hover, detalhes)",
+        "name": "secondaryColor",
+        "type": "string",
+        "title": "Cor Secundária (Hexadecimal)"
+      },
+      {
+        "placeholder": "#0f172a",
+        "initialValue": "#0f172a",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "regex",
+                "constraint": {
+                  "pattern": "/^#[0-9A-Fa-f]{6}$/",
+                  "name": "hex",
+                  "invert": false
+                }
+              }
+            ],
+            "level": "error",
+            "message": "Use formato hexadecimal: #000000"
+          }
+        ],
+        "description": "Cor de fundo escuro - formato: #0f172a (hero, footer)",
+        "name": "darkColor",
+        "type": "string",
+        "title": "Cor Escura (Hexadecimal)"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 60
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Aparece na aba do navegador e no Google",
+        "name": "siteTitle",
+        "type": "string",
+        "title": "Título do Site"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 160
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Descrição que aparece no Google (máx. 160 caracteres)",
+        "name": "siteDescription",
+        "type": "text",
+        "title": "Descrição do Site"
+      },
+      {
+        "description": "Palavras-chave para SEO (ex: jornalismo, redação, assessoria)",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "siteKeywords",
+        "type": "array",
+        "title": "Palavras-chave"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document",
+    "title": "Configurações do Site"
+  }
+]
