@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -29,6 +30,8 @@ export default function Header() {
             <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
+
+        <ThemeToggle />
       </div>
     </header>
   )
