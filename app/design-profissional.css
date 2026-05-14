@@ -1018,7 +1018,7 @@ body {
 .theme-toggle {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  left: 2rem; /* Movido para o canto esquerdo para não conflitar com back-to-top */
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1253,5 +1253,154 @@ body {
   [data-theme="dark"] {
     --text-primary: #ffffff;
     --bg-primary: #000000;
+  }
+}
+
+/* ===== HERO BUTTONS ===== */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.hero-buttons .btn-primary {
+  background: var(--dourado-elegante);
+  color: var(--azul-profissional);
+  box-shadow: var(--sombra-media);
+}
+
+.hero-buttons .btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-dourada);
+}
+
+.hero-buttons .btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background: white;
+  color: var(--azul-profissional);
+  transform: translateY(-2px);
+}
+
+.hero-buttons .btn-secondary svg {
+  transition: transform 0.3s ease;
+}
+
+.hero-buttons .btn-secondary:hover svg {
+  transform: translateY(2px);
+}
+
+/* Dark mode - Hero buttons */
+[data-theme="dark"] .hero-buttons .btn-primary {
+  background: var(--accent-secondary);
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .hero-buttons .btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+/* ===== READ MORE BUTTON ===== */
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--dourado-elegante);
+  color: var(--azul-profissional);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--sombra-suave);
+}
+
+.read-more-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+.read-more-btn:active {
+  transform: translateY(0);
+}
+
+.read-more-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover svg {
+  transform: translateY(2px);
+}
+
+/* Dark mode - Read more button */
+[data-theme="dark"] .read-more-btn {
+  background: var(--accent-secondary);
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .read-more-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* About text animation */
+.about-text p {
+  transition: max-height 0.5s ease;
+  overflow: hidden;
+}
+
+.about-text p.collapsed {
+  max-height: 8em; /* Aproximadamente 4 linhas */
+}
+
+.about-text p.expanded {
+  max-height: none;
+}
+
+/* ===== RESPONSIVIDADE - HERO BUTTONS ===== */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .read-more-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

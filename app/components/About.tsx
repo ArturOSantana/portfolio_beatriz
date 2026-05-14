@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 import { urlFor } from '@/lib/sanity'
 
@@ -12,13 +15,49 @@ interface AboutProps {
 }
 
 export default function About({ title, text, image }: AboutProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
+  
+  // Conta o número de linhas (aproximadamente 80 caracteres por linha)
+  const lines = text ? Math.ceil(text.length / 80) : 0
+  const shouldShowReadMore = lines > 4
+  
+  // Pega os primeiros ~320 caracteres (4 linhas)
+  const shortText = text ? text.substring(0, 320) : ''
+  const displayText = isExpanded || !shouldShowReadMore ? text : shortText
+
   return (
     <section id="sobre" className="about">
       <div className="container">
         <div className="about-content">
           <div className="about-text">
             <h3>{title}</h3>
-            <p>{text}</p>
+            <p className={isExpanded ? 'expanded' : 'collapsed'}>
+              {displayText}
+              {!isExpanded && shouldShowReadMore && '...'}
+            </p>
+            {shouldShowReadMore && (
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="read-more-btn"
+                aria-expanded={isExpanded}
+              >
+                {isExpanded ? (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="18 15 12 9 6 15" />
+                    </svg>
+                    Ler menos
+                  </>
+                ) : (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                    Ler mais
+                  </>
+                )}
+              </button>
+            )}
           </div>
           
           <div className="about-photo">
@@ -48,3 +87,4 @@ export default function About({ title, text, image }: AboutProps) {
   )
 }
 
+// Made with Bob

@@ -63,6 +63,16 @@ export default defineType({
       },
       group: 'hero',
     }),
+    defineField({
+      name: 'resumeFile',
+      title: '📄 Currículo (PDF)',
+      type: 'file',
+      description: 'Faça upload do seu currículo em PDF para download',
+      options: {
+        accept: '.pdf',
+      },
+      group: 'hero',
+    }),
 
     // ===== SEÇÃO SOBRE =====
     defineField({

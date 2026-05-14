@@ -14,6 +14,7 @@ async function getSettings() {
       heroSubtitle,
       heroButtonText,
       heroImage,
+      "resumeUrl": resumeFile.asset->url,
       aboutTitle,
       aboutText,
       aboutImage,
@@ -52,6 +53,7 @@ export default async function Home() {
           subtitle={settings?.heroSubtitle || 'Redação jornalística, assessoria de imprensa, ghostwriting e blog posts com excelência e credibilidade.'}
           buttonText={settings?.heroButtonText}
           image={settings?.heroImage}
+          resumeUrl={settings?.resumeUrl}
         />
         <BrandsCarousel />
         <About
