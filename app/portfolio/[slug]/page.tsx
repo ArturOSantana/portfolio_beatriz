@@ -25,6 +25,8 @@ async function getPortfolio(slug: string) {
   }
 }
 
+export const revalidate = 30
+
 export default async function PortfolioPage({
   params
 }: {

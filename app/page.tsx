@@ -38,6 +38,8 @@ async function getSettings() {
   }
 }
 
+export const revalidate = 30
+
 export default async function Home() {
   const settings = await getSettings()
 
