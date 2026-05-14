@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-beatriz-sanity",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "dependencies": {
+    "styled-components": "^6.4.1"
+  }
+}

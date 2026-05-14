@@ -1,0 +1,576 @@
+/* ============================================
+   MELHORIAS VISUAIS - PERSONALIDADE E VIDA
+   Design moderno para jornalista profissional
+   ============================================ */
+
+/* ===== VARIÁVEIS DE CORES VIBRANTES ===== */
+:root {
+  /* Cores principais - Paleta jornalística moderna */
+  --cor-primaria: #2563eb; /* Azul confiança */
+  --cor-secundaria: #7c3aed; /* Roxo criatividade */
+  --cor-destaque: #f59e0b; /* Âmbar energia */
+  --cor-sucesso: #10b981; /* Verde sucesso */
+  
+  /* Gradientes vibrantes */
+  --gradiente-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradiente-card: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradiente-sobre: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradiente-contato: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  
+  /* Sombras modernas */
+  --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --sombra-media: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --sombra-forte: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --sombra-colorida: 0 10px 40px rgba(103, 126, 234, 0.3);
+}
+
+/* ===== ANIMAÇÕES SUAVES ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ===== HEADER MODERNO ===== */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--sombra-suave);
+  border-bottom: 2px solid transparent;
+  border-image: var(--gradiente-hero) 1;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.8rem;
+  background: var(--gradiente-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.nav-links a {
+  position: relative;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradiente-hero);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--cor-primaria);
+  transform: translateY(-2px);
+}
+
+/* ===== HERO SECTION VIBRANTE ===== */
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInLeft 1s ease-out;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 500;
+  animation: fadeInLeft 1.2s ease-out;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero .btn {
+  background: white;
+  color: #1e3a8a;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInLeft 1.4s ease-out, pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: #fbbf24;
+  color: #1e3a8a;
+}
+
+.hero-photo {
+  animation: fadeInRight 1s ease-out, float 3s ease-in-out infinite;
+  position: relative;
+}
+
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(20px);
+}
+
+.hero-photo img {
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border: 5px solid white;
+}
+
+/* ===== BRANDS CAROUSEL ELEGANTE ===== */
+.brands {
+  background: linear-gradient(to bottom, #f8fafc, white);
+  animation: fadeInUp 1s ease-out;
+}
+
+.brands h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradiente-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 3rem;
+}
+
+/* ===== ABOUT SECTION MODERNA ===== */
+.about {
+  background: var(--gradiente-sobre);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.about h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInLeft 1s ease-out;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.8;
+  animation: fadeInLeft 1.2s ease-out;
+}
+
+.about-photo {
+  animation: fadeInRight 1.2s ease-out;
+  position: relative;
+}
+
+.about-photo::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: var(--gradiente-card);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(20px);
+  animation: pulse 3s infinite;
+}
+
+.about-photo-img {
+  border: 6px solid white !important;
+  box-shadow: var(--sombra-colorida);
+  transition: all 0.3s ease;
+}
+
+.about-photo-img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* ===== PORTFOLIO CATEGORIES VIBRANTE ===== */
+.portfolio-categorias {
+  background: linear-gradient(to bottom, white, #f8fafc);
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.titulo-secao {
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--gradiente-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1s ease-out;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.portfolio-categorias .card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--sombra-suave);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out;
+  animation-fill-mode: both;
+}
+
+.portfolio-categorias .card:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-categorias .card:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-categorias .card:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-categorias .card:nth-child(4) { animation-delay: 0.4s; }
+
+.portfolio-categorias .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--gradiente-hero);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-categorias .card:hover::before {
+  transform: scaleX(1);
+}
+
+.portfolio-categorias .card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--sombra-colorida);
+}
+
+.portfolio-categorias .card h4 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.portfolio-categorias .card:hover h4 {
+  background: var(--gradiente-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portfolio-categorias .card p {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ===== CONTACT SECTION ENERGÉTICA ===== */
+.contact {
+  background: var(--gradiente-contato);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1.6s ease-out;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.contact h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.contact .btn {
+  background: white;
+  color: #1e293b;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: var(--sombra-forte);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact .btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: var(--gradiente-hero);
+  color: white;
+}
+
+.contact .btn i {
+  font-size: 1.2rem;
+}
+
+/* ===== FOOTER MODERNO ===== */
+footer {
+  background: #1e293b;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  font-weight: 600;
+  animation: fadeInUp 1.8s ease-out;
+}
+
+#back-to-top {
+  background: var(--gradiente-hero);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: var(--sombra-colorida);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+#back-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 20px 40px rgba(103, 126, 234, 0.5);
+}
+
+/* ===== PÁGINAS DE CATEGORIA ===== */
+.categoria-portfolio {
+  min-height: 60vh;
+  padding: 4rem 0;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.categoria-portfolio .card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 1s ease-out;
+  animation-fill-mode: both;
+}
+
+.categoria-portfolio .card:nth-child(1) { animation-delay: 0.1s; }
+.categoria-portfolio .card:nth-child(2) { animation-delay: 0.2s; }
+.categoria-portfolio .card:nth-child(3) { animation-delay: 0.3s; }
+
+.categoria-portfolio .card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--sombra-colorida);
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.card-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradiente-hero);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-image::after {
+  opacity: 0.3;
+}
+
+.card-image img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--gradiente-hero);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: var(--sombra-suave);
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+  transform: translateX(-5px);
+  box-shadow: var(--sombra-forte);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .titulo-secao {
+    font-size: 2rem;
+  }
+  
+  .contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ===== LOADING SHIMMER ===== */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #f8f8f8 50%,
+    #f0f0f0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Made with Bob - Design vibrante e profissional */
+
+/* Made with Bob */

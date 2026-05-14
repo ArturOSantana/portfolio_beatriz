@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Profissional - Jornalista
 
-## Getting Started
+Portfolio moderno e profissional desenvolvido com Next.js 14 e Sanity CMS, permitindo gerenciamento completo de conteúdo sem necessidade de código.
 
-First, run the development server:
+## 🚀 Tecnologias
+
+- **Next.js 14** - Framework React com App Router
+- **TypeScript** - Tipagem estática para maior segurança
+- **Sanity.io** - CMS headless com interface visual
+- **Tailwind CSS** - Estilização moderna e responsiva
+- **Vercel** - Hospedagem gratuita e otimizada
+
+## ✨ Funcionalidades
+
+### Para o Cliente
+- ✅ Adicionar/editar trabalhos do portfólio sem código
+- ✅ Personalizar cores, textos e imagens do site
+- ✅ Gerenciar informações de contato e redes sociais
+- ✅ Publicar/despublicar conteúdo instantaneamente
+- ✅ Interface visual intuitiva (Sanity Studio)
+
+### Técnicas
+- ✅ Design profissional e responsivo
+- ✅ Otimização automática de imagens
+- ✅ SEO otimizado
+- ✅ Performance superior (Next.js)
+- ✅ Hospedagem gratuita (Vercel + Sanity)
+- ✅ Zero manutenção de servidor
+
+## 📦 Instalação
 
 ```bash
+# Instalar dependências
+npm install
+
+# Configurar variáveis de ambiente
+cp .env.example .env.local
+# Editar .env.local com suas credenciais do Sanity
+
+# Iniciar desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Iniciar Sanity Studio
+npm run sanity
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Deploy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Deploy do Site (Vercel)
+```bash
+# Conectar com Vercel
+vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Configurar variáveis de ambiente no painel Vercel:
+# NEXT_PUBLIC_SANITY_PROJECT_ID
+# NEXT_PUBLIC_SANITY_DATASET
+```
 
-## Learn More
+### 2. Deploy do Sanity Studio
+```bash
+npx sanity deploy
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 Estrutura do Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+portfolio-beatriz/
+├── app/                    # Páginas e componentes Next.js
+│   ├── components/        # Componentes reutilizáveis
+│   ├── categoria/         # Páginas de categorias
+│   ├── portfolio/         # Páginas de trabalhos individuais
+│   └── globals.css        # Estilos globais
+├── sanity/                # Configuração do Sanity CMS
+│   ├── schemas/          # Schemas de conteúdo
+│   └── sanity.config.ts  # Configuração do Studio
+├── lib/                   # Utilitários
+│   └── sanity.ts         # Cliente Sanity
+└── public/               # Assets estáticos
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Personalização
 
-## Deploy on Vercel
+O site pode ser totalmente personalizado através do Sanity Studio:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Seção Hero**: Título, subtítulo, botão e imagem principal
+- **Sobre**: Biografia e foto
+- **Contato**: Email, telefone, WhatsApp e redes sociais
+- **Cores**: Esquema de cores do site
+- **SEO**: Título, descrição e palavras-chave
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📱 Categorias de Portfolio
+
+1. **Redação Jornalística** - Matérias e reportagens
+2. **Assessoria de Imprensa** - Releases e comunicados
+3. **Ghostwriting** - Artigos e conteúdos autorais
+4. **Blog Posts** - Artigos para blogs e sites
+
+## 🔧 Scripts Disponíveis
+
+```bash
+npm run dev          # Inicia servidor de desenvolvimento
+npm run build        # Cria build de produção
+npm run start        # Inicia servidor de produção
+npm run lint         # Verifica código
+npm run sanity       # Inicia Sanity Studio local
+```
+
+## 📄 Licença
+
+Este projeto é privado e de uso exclusivo do cliente.
+
+## 🆘 Suporte
+
+Para dúvidas sobre uso do CMS ou personalização, consulte a documentação interna ou entre em contato com o desenvolvedor.
+
+---
+
+**Desenvolvido com Next.js 14 + Sanity CMS**

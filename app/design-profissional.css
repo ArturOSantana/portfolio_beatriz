@@ -1,0 +1,618 @@
+/* ============================================
+   DESIGN PROFISSIONAL E SOFISTICADO
+   Portfólio Jornalístico de Alta Qualidade
+   ============================================ */
+
+/* ===== SCROLL SUAVE GLOBAL ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Compensa a altura do header fixo */
+}
+
+/* ===== PALETA PROFISSIONAL ===== */
+:root {
+  /* Cores principais - Elegância e credibilidade */
+  --azul-profissional: #0f172a;
+  --azul-medio: #1e40af;
+  --azul-claro: #3b82f6;
+  --dourado-elegante: #d4af37;
+  --cinza-escuro: #1f2937;
+  --cinza-medio: #6b7280;
+  --cinza-claro: #f3f4f6;
+  
+  /* Gradientes sofisticados */
+  --gradiente-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradiente-destaque: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
+  
+  /* Sombras profissionais */
+  --sombra-suave: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --sombra-media: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --sombra-forte: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --sombra-dourada: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+/* ===== TIPOGRAFIA PROFISSIONAL ===== */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--cinza-escuro);
+  line-height: 1.6;
+}
+
+/* ===== HEADER ELEGANTE ===== */
+header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: var(--sombra-suave);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--azul-profissional);
+  letter-spacing: -0.02em;
+}
+
+.logo:hover {
+  color: var(--dourado-elegante);
+}
+
+.nav-links a {
+  color: var(--cinza-escuro);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  background: var(--dourado-elegante);
+  height: 2px;
+}
+
+.nav-links a:hover {
+  color: var(--azul-profissional);
+}
+
+/* ===== HERO PROFISSIONAL E ELEGANTE ===== */
+.hero {
+  background: var(--gradiente-hero);
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+/* Padrão sutil de linhas */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+/* Detalhe dourado elegante */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradiente-destaque);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Destaque dourado no nome */
+.hero h1::first-line {
+  background: var(--gradiente-destaque);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  background: var(--dourado-elegante);
+  color: var(--azul-profissional);
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  box-shadow: var(--sombra-dourada);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero .btn:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.hero .btn:active {
+  transform: translateY(0);
+}
+
+.hero-photo {
+  position: relative;
+}
+
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: var(--gradiente-destaque);
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.hero-photo img {
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== BRANDS SECTION ELEGANTE ===== */
+.brands {
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brands h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cinza-escuro);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== ABOUT SECTION PROFISSIONAL ===== */
+.about {
+  background: var(--cinza-claro);
+  position: relative;
+}
+
+.about h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--azul-profissional);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Linha dourada sob o título */
+.about h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradiente-destaque);
+}
+
+.about p {
+  font-size: 1.15rem;
+  color: var(--cinza-medio);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.about-photo::before {
+  background: var(--gradiente-destaque);
+  opacity: 0.2;
+}
+
+.about-photo-img {
+  border: 4px solid white !important;
+  box-shadow: var(--sombra-forte);
+}
+
+/* ===== PORTFOLIO CATEGORIES PREMIUM ===== */
+.portfolio-categorias {
+  background: white;
+}
+
+.titulo-secao {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--azul-profissional);
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Linha dourada sob o título */
+.titulo-secao::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradiente-destaque);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--cinza-medio);
+  margin-bottom: 3rem;
+}
+
+.portfolio-categorias .card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barra dourada no topo */
+.portfolio-categorias .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradiente-destaque);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-categorias .card:hover::before {
+  transform: scaleX(1);
+}
+
+.portfolio-categorias .card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-forte);
+  border-color: var(--dourado-elegante);
+}
+
+.portfolio-categorias .card h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--azul-profissional);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-categorias .card:hover h4 {
+  color: var(--dourado-elegante);
+}
+
+.portfolio-categorias .card p {
+  color: var(--cinza-medio);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== CONTACT SECTION ELEGANTE ===== */
+.contact {
+  background: var(--gradiente-hero);
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+.contact h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact .btn {
+  background: white;
+  color: var(--azul-profissional);
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  box-shadow: var(--sombra-media);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contact .btn:hover {
+  background: var(--dourado-elegante);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-dourada);
+  border-color: var(--dourado-elegante);
+}
+
+.contact .btn:active {
+  transform: translateY(0);
+}
+
+.contact .btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.contact .btn.secondary:hover {
+  background: white;
+  color: var(--azul-profissional);
+}
+
+/* ===== FOOTER PROFISSIONAL ===== */
+footer {
+  background: var(--azul-profissional);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#back-to-top {
+  background: var(--dourado-elegante);
+  color: var(--azul-profissional);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  box-shadow: var(--sombra-dourada);
+  transition: all 0.3s ease;
+}
+
+#back-to-top:hover {
+  background: #f59e0b;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+/* ===== PÁGINAS DE CATEGORIA ===== */
+.categoria-portfolio {
+  min-height: 60vh;
+  padding: 4rem 0;
+  background: var(--cinza-claro);
+}
+
+.categoria-portfolio .card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: all 0.3s ease;
+}
+
+.categoria-portfolio .card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-forte);
+  border-color: var(--dourado-elegante);
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  background: var(--cinza-claro);
+}
+
+.card-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.7) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-image::after {
+  opacity: 1;
+}
+
+.card-image img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--azul-profissional);
+  margin: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  color: var(--cinza-medio);
+  margin: 0 1.5rem 1.5rem;
+  line-height: 1.6;
+}
+
+.card .btn {
+  margin: 0 1.5rem 1.5rem;
+  background: var(--azul-profissional);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.card .btn:hover {
+  background: var(--dourado-elegante);
+  color: var(--azul-profissional);
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--azul-profissional);
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  box-shadow: var(--sombra-suave);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-voltar:hover {
+  background: var(--dourado-elegante);
+  color: var(--azul-profissional);
+  transform: translateX(-3px);
+  box-shadow: var(--sombra-media);
+}
+
+/* ===== POST DETALHE ===== */
+.post-detalhe {
+  padding: 4rem 0;
+  background: white;
+}
+
+.post-detalhe .titulo-secao {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.post-thumb {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--sombra-media);
+}
+
+.post-texto {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-texto .resumo {
+  font-size: 1.25rem;
+  color: var(--cinza-medio);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-style: italic;
+  border-left: 3px solid var(--dourado-elegante);
+  padding-left: 1.5rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .titulo-secao {
+    font-size: 2rem;
+  }
+  
+  .contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ===== ANIMAÇÕES SUAVES ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero, .brands, .about, .portfolio-categorias, .contact {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Made with Bob - Design Profissional e Sofisticado */
+
+/* Made with Bob */
